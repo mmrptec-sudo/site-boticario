@@ -1,0 +1,8 @@
+REVISÃO V19 — RESUMO
+- Dados de produtos separados da lógica principal.
+- Introdução separada da aplicação da loja.
+- CSS e JavaScript organizados por responsabilidade.
+- Removidos 2 blocos CSS exatamente duplicados.
+- Mantidos overrides de CSS responsivo intencionais.
+- Caminhos do HTML verificados.
+- Sintaxe JavaScript verificada.
