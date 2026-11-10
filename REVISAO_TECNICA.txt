@@ -1,0 +1,8 @@
+REVISAO DO PROJETO V20
+
+Base visual e funcional: versão V17 enviada anteriormente.
+Introdução: versão V17 otimizada, com vídeo específico para desktop e celular.
+Organização: CSS, JavaScript, vídeos, imagens e dados separados por responsabilidade.
+Limpeza: removidos dois blocos CSS exatamente duplicados; não foram removidas regras repetidas que atuam como sobrescritas responsivas.
+Verificações: sintaxe JavaScript, referências locais do HTML e análise sintática CSS.
+Limite: esta revisão estática não substitui testes visuais em navegadores e dispositivos reais.
