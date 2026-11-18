@@ -1,49 +1,52 @@
-# Site demonstrativo — O Boticário | MM Soluções Digitais
+# Essência Selecionada — site demonstrativo (versão melhorada)
 
-Projeto demonstrativo independente, sem vínculo oficial com a marca O Boticário.
+Projeto de boutique de perfumaria **independente e demonstrativo**, com produtos e preços ilustrativos relacionados ao universo O Boticário. **Não é o site oficial e não processa compras.**
 
-## Estrutura única do projeto
+## O que foi corrigido e melhorado
+
+- **Arquivos reorganizados:** o ZIP original trazia CSS, JS, imagens e vídeos na raiz, mas o `index.html` apontava para `assets/`. Agora todos os caminhos correspondem aos arquivos reais.
+- Identidade premium com visual editorial verde-floresta, creme e dourado; cards, filtros, tipografia e botões revisados.
+- Responsividade, contraste, foco por teclado e link para pular diretamente ao catálogo.
+- Introdução em vídeo preservada, com versão desktop compactada (aprox. 6,1 MB → 1,6 MB), e opção de pular/rever.
+- Navegação, busca, quiz, favoritos e sacola demonstrativa mantidos.
+- **Newsletter preparada para banco de dados Supabase** com API serverless `/api/newsletter` na Vercel. A chave privada fica nas variáveis de ambiente da Vercel, nunca no JavaScript público.
+- SQL de criação da tabela com **RLS habilitado**, sem acesso público aos dados cadastrados.
+
+## Estrutura
 
 ```text
-site-boticario/
-├── index.html
-├── README.md
-└── assets/
-    ├── css/
-    │   ├── store.css       # visual da loja
-    │   └── intro.css       # visual da abertura em vídeo
-    ├── js/
-    │   ├── products.js     # catálogo e dados dos produtos
-    │   ├── store.js        # busca, filtros, favoritos, sacola e interações
-    │   └── intro.js        # reprodução, som, pular e rever a introdução
-    ├── videos/
-    │   ├── intro-desktop.mp4
-    │   └── intro-mobile.mp4
-    └── images/
-        └── intro-poster.jpg
+index.html                 Página principal
+privacidade.html            Texto-base da política de dados; revise antes de ativar cadastros
+assets/css/                Estilos base e refinamentos
+assets/js/                 Catálogo, loja, introdução e newsletter
+assets/videos/             Abertura desktop e mobile
+assets/images/             Poster e favicon
+api/newsletter.js           Função da Vercel → Supabase
+supabase/schema.sql        Criação da tabela no Supabase
+vercel.json                Configuração de deploy e headers
+.env.example               Exemplo de variáveis (não contém chaves reais)
+DEPLOY.md                  Guia completo para publicar
 ```
 
-## Onde editar
+## Testar localmente
 
-- Produtos, preços demonstrativos, categorias e descrições: `assets/js/products.js`.
-- Funcionalidades da loja: `assets/js/store.js`.
-- Introdução e comportamento do vídeo: `assets/js/intro.js`.
-- Estilo geral: `assets/css/store.css`.
-- Estilo da introdução: `assets/css/intro.css`.
-- Vídeos e imagem de capa: `assets/videos/` e `assets/images/`.
+Na raiz do projeto:
 
-## Ordem dos scripts
+```bash
+python -m http.server 8000
+```
 
-O HTML carrega `products.js` antes de `store.js`, pois a loja depende do catálogo. `intro.js` é independente.
+Abra http://localhost:8000. A loja estática funciona localmente; **o envio da newsletter requer a função na Vercel**, que não roda no servidor Python.
 
-## Publicação
+## Atualizar o catálogo
 
-Envie o conteúdo desta pasta para a raiz do repositório GitHub. O arquivo `index.html` deve ficar na raiz. Preserve toda a pasta `assets` e suas subpastas.
+Edite `assets/js/products.js`. Mantenha a atribuição `window.BOTICARIO_PRODUCTS = [...]` e os campos usados pela loja. Fotos, preços e características devem ser conferidos com fontes autorizadas antes de qualquer uso comercial real.
 
-## Observações
+## Atenção antes de publicar
 
-- Este é um protótipo demonstrativo.
-- Produtos, preços, imagens, disponibilidade e textos são ilustrativos.
-- A sacola/checkout não processa pagamentos reais.
-- Não é o site oficial nem representa uma oferta oficial do O Boticário.
-- Se renomear ou mover arquivos, atualize os caminhos correspondentes no HTML.
+1. Confira direitos de uso das imagens, vídeos, textos e marcas de terceiros.
+2. Revise o texto da Política de Privacidade, identifique o responsável pelo tratamento de dados e **adicione um e-mail real para direitos de privacidade antes de ativar o cadastro de novidades**.
+3. A newsletter pode exigir mecanismos contra abuso, dupla confirmação de inscrição e gestão de descadastro antes de uma campanha real.
+4. **Não existe checkout real nem integração de estoque, frete ou pagamentos.** Não apresente a demonstração como loja oficial.
+
+Veja **[DEPLOY.md](DEPLOY.md)** para o passo a passo.
