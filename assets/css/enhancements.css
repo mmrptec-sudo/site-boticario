@@ -116,3 +116,11 @@ body{color:#1d3d2f;line-height:1.5}
   .section{padding:70px 0}
 }
 @media(prefers-reduced-motion:reduce){.product,.category,.hero-cta .btn{transform:none!important;transition:none!important}}
+
+/* Cadastro temporariamente desligado: modo sem Supabase */
+[hidden]{display:none!important}
+.newsletter-coming-soon{border:1px solid rgba(243,218,158,.36);border-radius:16px;padding:22px 26px;background:rgba(255,255,255,.07);max-width:490px;min-width:0}
+.newsletter-coming-soon-tag{display:block;font-size:10px;letter-spacing:.18em;font-weight:700;color:#f4d89c;margin-bottom:9px}
+.newsletter-coming-soon strong{font-family:Georgia,serif;font-size:24px;line-height:1.23;font-weight:normal;color:#fff8e9;display:block}
+.newsletter-coming-soon p{font-size:12px;line-height:1.65;color:#d8e3db;margin:10px 0 0}
+@media(max-width:760px){.newsletter-coming-soon{padding:20px;width:100%}.newsletter-coming-soon strong{font-size:21px}}

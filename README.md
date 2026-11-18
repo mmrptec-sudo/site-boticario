@@ -1,52 +1,31 @@
-# Essência Selecionada — site demonstrativo (versão melhorada)
+# Essência Selecionada — versão para Vercel (sem Supabase por enquanto)
 
-Projeto de boutique de perfumaria **independente e demonstrativo**, com produtos e preços ilustrativos relacionados ao universo O Boticário. **Não é o site oficial e não processa compras.**
+Site demonstrativo independente de curadoria de perfumaria inspirado no universo O Boticário. **Não é o site oficial, não recebe pedidos e não processa pagamentos.**
 
-## O que foi corrigido e melhorado
+## Pronto agora
+- Site HTML/CSS/JavaScript sem etapa de build, compatível com Vercel.
+- Arquivos CSS, JS, vídeos e imagens organizados na pasta `assets/`.
+- Layout responsivo, vídeo de abertura, catálogo, filtros, busca, quiz, favoritos e sacola simulada.
+- Formulário de newsletter **desativado**, com aviso de "em breve": nenhum e-mail será coletado até o Supabase estar conectado.
+- Pastas `api/` e `supabase/` preservadas apenas para ativação futura.
+- Removidas duplicatas da raiz trazidas pelo arquivo ZIP; ocultos `.gitignore` e `.env.example` adicionados.
 
-- **Arquivos reorganizados:** o ZIP original trazia CSS, JS, imagens e vídeos na raiz, mas o `index.html` apontava para `assets/`. Agora todos os caminhos correspondem aos arquivos reais.
-- Identidade premium com visual editorial verde-floresta, creme e dourado; cards, filtros, tipografia e botões revisados.
-- Responsividade, contraste, foco por teclado e link para pular diretamente ao catálogo.
-- Introdução em vídeo preservada, com versão desktop compactada (aprox. 6,1 MB → 1,6 MB), e opção de pular/rever.
-- Navegação, busca, quiz, favoritos e sacola demonstrativa mantidos.
-- **Newsletter preparada para banco de dados Supabase** com API serverless `/api/newsletter` na Vercel. A chave privada fica nas variáveis de ambiente da Vercel, nunca no JavaScript público.
-- SQL de criação da tabela com **RLS habilitado**, sem acesso público aos dados cadastrados.
+## Publicar agora
+Siga `DEPLOY.md`. **Não é necessário ter projeto Supabase ou colocar variáveis de ambiente para publicar uma versão demonstrativa.**
 
-## Estrutura
-
-```text
-index.html                 Página principal
-privacidade.html            Texto-base da política de dados; revise antes de ativar cadastros
-assets/css/                Estilos base e refinamentos
-assets/js/                 Catálogo, loja, introdução e newsletter
-assets/videos/             Abertura desktop e mobile
-assets/images/             Poster e favicon
-api/newsletter.js           Função da Vercel → Supabase
-supabase/schema.sql        Criação da tabela no Supabase
-vercel.json                Configuração de deploy e headers
-.env.example               Exemplo de variáveis (não contém chaves reais)
-DEPLOY.md                  Guia completo para publicar
-```
-
-## Testar localmente
-
-Na raiz do projeto:
-
+## Testar no computador
+Na pasta que contém `index.html`, rode:
 ```bash
 python -m http.server 8000
 ```
+Abra http://localhost:8000. A introdução pode ser pulada.
 
-Abra http://localhost:8000. A loja estática funciona localmente; **o envio da newsletter requer a função na Vercel**, que não roda no servidor Python.
+## Supabase no futuro
+1. Criar projeto no Supabase e rodar `supabase/schema.sql` pelo SQL Editor.
+2. Adicionar `SUPABASE_URL` e `SUPABASE_SECRET_KEY` somente nas configurações da Vercel, nunca no GitHub.
+3. Alterar `const NEWSLETTER_ACTIVE = false;` para `true` em `assets/js/newsletter.js`.
+4. Rever `privacidade.html`, identificação do responsável, canal de descadastro e consentimento **antes de coletar e-mails reais**.
 
-## Atualizar o catálogo
-
-Edite `assets/js/products.js`. Mantenha a atribuição `window.BOTICARIO_PRODUCTS = [...]` e os campos usados pela loja. Fotos, preços e características devem ser conferidos com fontes autorizadas antes de qualquer uso comercial real.
-
-## Atenção antes de publicar
-
-1. Confira direitos de uso das imagens, vídeos, textos e marcas de terceiros.
-2. Revise o texto da Política de Privacidade, identifique o responsável pelo tratamento de dados e **adicione um e-mail real para direitos de privacidade antes de ativar o cadastro de novidades**.
-3. A newsletter pode exigir mecanismos contra abuso, dupla confirmação de inscrição e gestão de descadastro antes de uma campanha real.
-4. **Não existe checkout real nem integração de estoque, frete ou pagamentos.** Não apresente a demonstração como loja oficial.
-
-Veja **[DEPLOY.md](DEPLOY.md)** para o passo a passo.
+## Importante
+- Conteúdo, valores e imagens são ilustrativos. Confirme direitos de uso e informações oficiais para qualquer uso comercial.
+- Não há checkout, estoque, ERP ou cobrança reais.

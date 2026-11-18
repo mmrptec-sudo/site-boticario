@@ -1,8 +1,15 @@
 (() => {
   'use strict';
+  // Ligar somente depois de criar a tabela e configurar as variáveis no Vercel.
+  // Até lá, o site funciona sem Supabase e não coleta e-mails.
+  const NEWSLETTER_ACTIVE = false;
+  const comingSoon = document.getElementById('newsletterComingSoon');
+  if (!NEWSLETTER_ACTIVE) return;
+  if (comingSoon) comingSoon.hidden = true;
   const form = document.getElementById('newsletter');
   const status = document.getElementById('newsletterStatus');
   if (!form || !status) return;
+  form.hidden = false;
 
   form.addEventListener('submit', async event => {
     event.preventDefault();

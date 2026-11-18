@@ -1,0 +1,13 @@
+CHECKLIST — DEPLOY SEM SUPABASE
+
+[ ] index.html no topo do repositorio GitHub
+[ ] assets/ com css, js, images e videos
+[ ] arquivos duplicados da raiz removidos
+[ ] Vercel importando mesmo repositorio e branch
+[ ] Root Directory = pasta contendo index.html
+[ ] Framework Preset = Other
+[ ] nao inserir chaves Supabase ainda
+[ ] teste mobile, busca, favoritos, quiz e sacola
+[ ] inscricao de e-mail desativada (Em preparacao)
+
+Para ativar Supabase depois, leia DEPLOY.md.
