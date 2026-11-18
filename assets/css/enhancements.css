@@ -124,3 +124,11 @@ body{color:#1d3d2f;line-height:1.5}
 .newsletter-coming-soon strong{font-family:Georgia,serif;font-size:24px;line-height:1.23;font-weight:normal;color:#fff8e9;display:block}
 .newsletter-coming-soon p{font-size:12px;line-height:1.65;color:#d8e3db;margin:10px 0 0}
 @media(max-width:760px){.newsletter-coming-soon{padding:20px;width:100%}.newsletter-coming-soon strong{font-size:21px}}
+
+/* Vitrine com links de compra direcionados ao canal oficial */
+a.shop-link{display:flex;align-items:center;justify-content:center;text-align:center;text-decoration:none;cursor:pointer;min-height:43px;}
+a.shop-link:focus-visible{outline:3px solid #2d7758;outline-offset:3px;}
+.product-pill[hidden]{display:none!important;}
+#cartButton[hidden],.nav-links [hidden],#mobileNav [hidden]{display:none!important;}
+
+.catalog-pagination{display:flex;flex-direction:column;align-items:center;gap:10px;padding:28px 0 10px;color:#6a806e;font-size:13px}.catalog-pagination[hidden]{display:none}.category-grid.imported-categories{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px}.catalog-category{border:1px solid #d9e8dd;background:#f8faf7;border-radius:14px;padding:24px 18px;text-align:left;min-height:125px;display:flex;flex-direction:column;justify-content:space-between;color:#234b38;cursor:pointer;transition:transform .15s}.catalog-category:hover{transform:translateY(-3px);border-color:#8bbaa0}.catalog-category strong{font-size:20px;font-weight:700}.catalog-category small{font-size:12px;color:#5d8b71}
