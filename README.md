@@ -1,3 +1,9 @@
+# Site pronto para catálogo completo
+
+O site está preparado para incluir produtos via CSV/TSV/JSON sem Supabase. **Não foi possível extrair o catálogo da página oficial fornecida; nenhuma lista de produtos novos foi incluída como se fosse real.**
+
+Abra `IMPORTAR_CATALOGO.md` para instruções. A ferramenta de importação fica em `ferramentas/importar.html` e gera `assets/js/catalogo-oficial.js`. Ao importar itens, os 12 exemplos ilustrativos desaparecem, dando lugar aos dados confirmados. Links de compra redirecionam à loja do revendedor.
+
 # Essência Selecionada — versão para Vercel (sem Supabase por enquanto)
 
 Site demonstrativo independente de curadoria de perfumaria inspirado no universo O Boticário. **Não é o site oficial, não recebe pedidos e não processa pagamentos.**
@@ -29,3 +35,8 @@ Abra http://localhost:8000. A introdução pode ser pulada.
 ## Importante
 - Conteúdo, valores e imagens são ilustrativos. Confirme direitos de uso e informações oficiais para qualquer uso comercial.
 - Não há checkout, estoque, ERP ou cobrança reais.
+
+
+## Atualização: quatro catálogos ciclo 16/2026
+
+Confira `CATALOGOS_2026.md` e `dados/resumo.json`. Esta versão inclui registros extraídos de quatro PDFs, inclusive itens que precisam de revisão manual. Fotos são páginas ilustradas dos PDFs e o link de compra é o endereço geral da loja informado pelo usuário.

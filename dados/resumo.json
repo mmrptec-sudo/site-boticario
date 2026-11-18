@@ -1,0 +1,22 @@
+{
+  "total_codes": 2765,
+  "by_brand": {
+    "O Boticário": 1514,
+    "Eudora": 753,
+    "Quem Disse, Berenice?": 417,
+    "O.U.i": 81
+  },
+  "unverified_by_brand": {
+    "O Boticário": 749,
+    "Eudora": 312,
+    "Quem Disse, Berenice?": 345,
+    "O.U.i": 5
+  },
+  "priced_by_brand": {
+    "O Boticário": 677,
+    "Eudora": 376,
+    "Quem Disse, Berenice?": 15,
+    "O.U.i": 71
+  },
+  "photo_note": "Page thumbnails from supplied PDFs, not individual product photos."
+}
