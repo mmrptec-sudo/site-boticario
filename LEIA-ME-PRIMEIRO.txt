@@ -1,0 +1,16 @@
+SITE BOTICARIO - VERSAO UNIFICADA PARA COMPUTADOR E CELULAR
+
+O site tem UMA UNICA PAGINA E UM UNICO CODIGO de layout e funcionamento.
+
+1. Abra o arquivo index.html: este e o codigo principal.
+2. O mesmo codigo se adapta automaticamente a monitores, notebooks, tablets e celulares.
+3. Nao existe arquivo index-mobile.html ou index-desktop.html.
+4. A pasta assets/images contem todas as imagens, incluindo as cinco fotos enviadas.
+5. A pasta assets/videos contem as duas midias de introducao (escolhidas automaticamente pela largura da tela).
+6. O catalogo real fica em assets/js/catalogo-oficial.js. O importador de produtos continua em ferramentas/importar.html.
+7. Para testar corretamente, execute na pasta extraida:
+   python -m http.server 8000
+   Depois abra http://localhost:8000 no navegador.
+8. Para publicar, envie a pasta inteira, com index.html e assets, a um servico de hospedagem estatica como Vercel.
+
+ATENCAO: Vitrine demonstrativa. Nao processa pagamento nem pedidos.

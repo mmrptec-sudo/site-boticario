@@ -1,42 +1,26 @@
-# Site pronto para catálogo completo
+# Site responsivo unificado — Desktop + Mobile
 
-O site está preparado para incluir produtos via CSV/TSV/JSON sem Supabase. **Não foi possível extrair o catálogo da página oficial fornecida; nenhuma lista de produtos novos foi incluída como se fosse real.**
+**Um único `index.html`** contém o HTML, o CSS responsivo e o JavaScript de interface. O site se adapta a qualquer tamanho de tela automaticamente. Não há duas versões para manter.
 
-Abra `IMPORTAR_CATALOGO.md` para instruções. A ferramenta de importação fica em `ferramentas/importar.html` e gera `assets/js/catalogo-oficial.js`. Ao importar itens, os 12 exemplos ilustrativos desaparecem, dando lugar aos dados confirmados. Links de compra redirecionam à loja do revendedor.
+- **Aparência:** estilos desktop, tablet e celular no mesmo bloco `estilos-unificados-responsivos` do arquivo `index.html`.
+- **Funcionalidades:** JavaScript de navegação, catálogo, favoritos, busca, quiz e interação no mesmo `index.html`.
+- **Dados:** `assets/js/catalogo-oficial.js` guarda os registros importados; editar pela ferramenta `ferramentas/importar.html` continua funcionando.
+- **Fotografias:** `assets/images/editorial/referencias-2026/` contém as fotos enviadas; outras imagens do catálogo mantidas.
+- **Vídeos:** `assets/videos/intro-desktop.mp4` e `intro-mobile.mp4` são variantes da mesma apresentação selecionadas pelo navegador, não páginas diferentes.
+- **Estrutura original:** catálogo, navegação, marcas, filtros, presentes, textos e recursos de navegação preservados.
 
-# Essência Selecionada — versão para Vercel (sem Supabase por enquanto)
+## Executar localmente
 
-Site demonstrativo independente de curadoria de perfumaria inspirado no universo O Boticário. **Não é o site oficial, não recebe pedidos e não processa pagamentos.**
-
-## Pronto agora
-- Site HTML/CSS/JavaScript sem etapa de build, compatível com Vercel.
-- Arquivos CSS, JS, vídeos e imagens organizados na pasta `assets/`.
-- Layout responsivo, vídeo de abertura, catálogo, filtros, busca, quiz, favoritos e sacola simulada.
-- Formulário de newsletter **desativado**, com aviso de "em breve": nenhum e-mail será coletado até o Supabase estar conectado.
-- Pastas `api/` e `supabase/` preservadas apenas para ativação futura.
-- Removidas duplicatas da raiz trazidas pelo arquivo ZIP; ocultos `.gitignore` e `.env.example` adicionados.
-
-## Publicar agora
-Siga `DEPLOY.md`. **Não é necessário ter projeto Supabase ou colocar variáveis de ambiente para publicar uma versão demonstrativa.**
-
-## Testar no computador
-Na pasta que contém `index.html`, rode:
 ```bash
 python -m http.server 8000
 ```
-Abra http://localhost:8000. A introdução pode ser pulada.
 
-## Supabase no futuro
-1. Criar projeto no Supabase e rodar `supabase/schema.sql` pelo SQL Editor.
-2. Adicionar `SUPABASE_URL` e `SUPABASE_SECRET_KEY` somente nas configurações da Vercel, nunca no GitHub.
-3. Alterar `const NEWSLETTER_ACTIVE = false;` para `true` em `assets/js/newsletter.js`.
-4. Rever `privacidade.html`, identificação do responsável, canal de descadastro e consentimento **antes de coletar e-mails reais**.
+Abrir <http://localhost:8000/>. No navegador, redimensione a janela para conferir o modo mobile.
 
-## Importante
-- Conteúdo, valores e imagens são ilustrativos. Confirme direitos de uso e informações oficiais para qualquer uso comercial.
-- Não há checkout, estoque, ERP ou cobrança reais.
+## Publicar
 
+Publicar **a pasta inteira**, com `index.html`, `assets/`, `api/` e `vercel.json`. Instruções específicas para Vercel em `DEPLOY.md`.
 
-## Atualização: quatro catálogos ciclo 16/2026
+## Aviso
 
-Confira `CATALOGOS_2026.md` e `dados/resumo.json`. Esta versão inclui registros extraídos de quatro PDFs, inclusive itens que precisam de revisão manual. Fotos são páginas ilustradas dos PDFs e o link de compra é o endereço geral da loja informado pelo usuário.
+Esta vitrine é independente e demonstrativa. Não processa pagamentos, nem cria pedidos reais. As informações, preços e imagens de catálogo exigem verificação antes de uso comercial.
